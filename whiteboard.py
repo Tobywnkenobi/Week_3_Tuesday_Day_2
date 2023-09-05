@@ -16,3 +16,20 @@
 # Protip: If you are trying to figure out why a string of parentheses is invalid, paste the parentheses into the code editor, and let the code highlighting show you!
 
 
+def parentheses_valid(parentheses):
+    
+    parentheses_counter = 0
+    for x in parentheses:
+        if x == "(":
+            parentheses_counter += 1
+        elif x == ")":
+            parentheses_counter -= 1
+            if parentheses_counter < 0:
+                return False
+    if parentheses_counter == 0:
+        return True
+    else:
+        return False
+
+print(parentheses_valid(")()("))
+
